@@ -1,0 +1,169 @@
+
+PREPARENEW
+CERTIFY
+COMPETE
+Search
+2
+ 20pa1a5452 
+All Contests  easycollections  Jesse and Cookies
+Jesse and Cookies
+Problem
+Submissions
+Leaderboard
+Discussions
+Submitted a year ago • Score: 25.00Status: Accepted
+ Test Case #0
+ Test Case #1
+ Test Case #2
+ Test Case #3
+ Test Case #4
+ Test Case #5
+ Test Case #6
+ Test Case #7
+ Test Case #8
+ Test Case #9
+ Test Case #10
+ Test Case #11
+ Test Case #12
+ Test Case #13
+ Test Case #14
+ Test Case #15
+ Test Case #16
+ Test Case #17
+ Test Case #18
+ Test Case #19
+ Test Case #20
+ Test Case #21
+ Test Case #22
+ Test Case #23
+ Test Case #24
+ Test Case #25
+ Test Case #26
+ Test Case #27
+
+Submitted Code
+Language: Java 15
+
+ Open in editor
+1
+import java.io.*;
+2
+import java.math.*;
+3
+import java.security.*;
+4
+import java.text.*;
+5
+import java.util.*;
+6
+import java.util.concurrent.*;
+7
+import java.util.function.*;
+8
+import java.util.regex.*;
+9
+import java.util.stream.*;
+10
+import static java.util.stream.Collectors.joining;
+11
+import static java.util.stream.Collectors.toList;
+12
+​
+13
+class Result {
+14
+ public static int cookies(int m,List<Integer>A){
+15
+     PriorityQueue<Integer> n =new PriorityQueue<Integer>(A);
+16
+     int p=n.peek();
+17
+     int count=0;
+18
+     while(n.size()>1 && p<m){
+19
+         int min1=n.remove();
+20
+         int min2=n.remove();
+21
+         int next=min1+min2*2;
+22
+         n.add(next);
+23
+         count+=1;
+24
+         p=n.peek();
+25
+     }
+26
+     if(p<m){
+27
+         return -1;
+28
+     }
+29
+     else{
+30
+         return count;
+31
+     }
+32
+ }
+33
+​
+34
+}
+35
+​
+36
+public class Solution {
+37
+    public static void main(String[] args) throws IOException {
+38
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+39
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+40
+​
+41
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+42
+​
+43
+        int n = Integer.parseInt(firstMultipleInput[0]);
+44
+​
+45
+        int k = Integer.parseInt(firstMultipleInput[1]);
+46
+​
+47
+        List<Integer> A = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+48
+            .map(Integer::parseInt)
+49
+            .collect(toList());
+50
+​
+51
+        int result = Result.cookies(k, A);
+52
+​
+53
+        bufferedWriter.write(String.valueOf(result));
+54
+        bufferedWriter.newLine();
+55
+​
+56
+        bufferedReader.close();
+57
+        bufferedWriter.close();
+58
+    }
+59
+}
+60
+​
+Interview Prep | Blog | Scoring | Environment | FAQ | About Us | Support | Careers | Terms Of Service | Privacy Policy |
+

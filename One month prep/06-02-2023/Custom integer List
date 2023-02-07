@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+class IntegerList
+{
+private int[] list;
+private int i=0,j;
+public int increment(){
+    return j+=1;
+}
+public IntegerList(int cap){
+    int d=cap;
+    list=new int[cap];
+}
+public void add(int value){
+if(i<list.length){
+    list[i]=value;
+    i++;
+}
+else{
+    System.out.println("can't add, list is full");
+}
+}
+public String toString(){
+    return j+" : "+list[j];
+}
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int cap=Integer.parseInt(in.nextLine());
+        IntegerList nums=new IntegerList(cap);
+        while(in.hasNextLine()){
+            int num=Integer.parseInt(in.nextLine());
+            nums.add(num);
+        }
+        for(int i=0;i<cap;i++){
+        System.out.println(nums);
+        nums.increment();
+        }
+    }
+}

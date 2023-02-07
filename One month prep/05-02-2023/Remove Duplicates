@@ -1,0 +1,7 @@
+s=str(input())
+a=[]
+for ele in s:
+    if ele not in a:
+        a.append(ele)
+for i in range(0,len(a)):
+    print(a[i],end="")

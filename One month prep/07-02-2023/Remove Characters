@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in=new Scanner(System.in);
+        String m=in.next();
+        String n=in.next();
+        HashMap<Character,Integer>map=new HashMap<Character,Integer>();
+        for(int i=0;i<n.length();i++){
+            char p =n.charAt(i);
+            if(map.containsKey(p)){
+                map.put(p,map.get(p)+1);
+            }
+            else{
+                map.put(p,1);
+            }
+        }
+            for(int i=0;i<m.length();i++){
+                char p=m.charAt(i);
+                if(map.containsKey(p)){
+                    map.put(p,map.get(p)-1);
+                    if(map.get(p)==0)
+                        map.remove(p);
+                    }
+                    else{
+                    System.out.print(p);
+                    }
+            
+            }
+        }
+}

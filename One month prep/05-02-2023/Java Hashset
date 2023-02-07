@@ -13,6 +13,6 @@ public class Solution {
             m.add(n);
             System.out.println(m.size());
         }
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+     
     }
 }
